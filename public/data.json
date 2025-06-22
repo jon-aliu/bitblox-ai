@@ -1,0 +1,392 @@
+{
+  "modulesDB": [
+    { "id": "BBM-001", "name": "BitBlox TRU (Microcontroller)", "aliases": ["controller", "board", "brain", "bitblox tru", "microcontroller"], "type": "controller", "description": "The central processing unit of your projects, responsible for running code and controlling all other modules." },
+    { "id": "BBM-002", "name": "LED Blox", "aliases": ["light", "lights", "leds"], "type": "output", "description": "A simple light source. Use it for status indicators, headlights, or creating colorful light shows." },
+    { "id": "BBM-003", "name": "Motor Driver Blox", "aliases": ["motor driver"], "type": "driver", "description": "Provides the necessary power and control to run multiple motors, enabling movement in robotic projects." },
+    { "id": "BBM-004", "name": "IR Blox", "aliases": ["infrared", "ir sensor"], "type": "sensor", "description": "An infrared sensor that can receive signals from standard remote controls, allowing you to build remote-controlled devices." },
+    { "id": "BBM-005", "name": "Voice Command Blox", "aliases": ["voice", "microphone"], "type": "sensor", "description": "A microphone module that can recognize spoken commands, perfect for voice-activated projects." },
+    { "id": "BBM-006", "name": "Power Blox", "aliases": ["power supply", "battery"], "type": "power", "description": "Provides a stable power source for your projects, ensuring all your modules have the energy they need to run." },
+    { "id": "BBM-007", "name": "Button/Switch Blox", "aliases": ["button", "switch", "push button"], "type": "input", "description": "A simple input component. Use it to trigger actions, switch between modes, or navigate menus." },
+    { "id": "BBM-008", "name": "Display Blox", "aliases": ["screen", "lcd"], "type": "output", "description": "An LCD screen for displaying text, numbers, and simple graphics, giving your projects a user interface." },
+    { "id": "BBM-009", "name": "Sound Blox", "aliases": ["speaker", "buzzer", "audio"], "type": "output", "description": "Produces audible tones, alarms, and simple melodies, adding sound effects to your creations." },
+    { "id": "BBM-010", "name": "Connectivity Blox", "aliases": ["wifi", "bluetooth", "network"], "type": "communication", "description": "Enables your projects to connect to the internet or other devices via WiFi and Bluetooth for IoT applications." },
+    { "id": "BBM-011", "name": "Light Sensor Blox", "aliases": ["photoresistor", "ldr", "light sensor"], "type": "sensor", "description": "Measures the ambient light level, allowing your projects to react to changes in brightness." },
+    { "id": "BBM-012", "name": "Temperature Sensor Blox", "aliases": ["temp sensor", "thermometer"], "type": "sensor", "description": "Measures the surrounding temperature, perfect for building weather stations or climate control systems." },
+    { "id": "BBM-013", "name": "Moisture Sensor Blox", "aliases": ["water sensor", "soil moisture"], "type": "sensor", "description": "Detects the presence of water or measures the moisture level in soil, ideal for automated plant watering systems." },
+    { "id": "BBM-014", "name": "Distance Sensor Blox", "aliases": ["ultrasonic", "proximity sensor"], "type": "sensor", "description": "Measures the distance to an object, enabling collision avoidance in robots or presence detection." },
+    { "id": "BBM-015", "name": "Motion Sensor Blox", "aliases": ["pir sensor", "movement detector"], "type": "sensor", "description": "Detects movement in its vicinity, commonly used for security systems or automatic lights." },
+    { "id": "BBM-016", "name": "Color Sensor Blox", "aliases": ["color detector"], "type": "sensor", "description": "Identifies the color of an object held in front of it, enabling projects like color sorters or chameleon lamps." },
+    { "id": "BBM-017", "name": "Accelerometer Blox", "aliases": ["accelerometer", "tilt sensor"], "type": "sensor", "description": "Measures tilt, motion, and orientation, allowing for gesture-controlled or motion-aware projects." },
+    { "id": "BBM-018", "name": "Humidity Sensor Blox", "aliases": ["humidity detector"], "type": "sensor", "description": "Measures the amount of moisture in the air, a key component for building weather stations." },
+    { "id": "BBM-019", "name": "Force/Pressure Sensor Blox", "aliases": ["pressure sensor", "force sensor"], "type": "sensor", "description": "Measures the amount of force or pressure applied to it, perfect for creating interactive buttons or scales." },
+    { "id": "BBM-020", "name": "Motor Blox", "aliases": ["motor", "motors"], "type": "output", "description": "A standard motor that provides rotational movement for wheels, arms, or any other moving part of your project." }
+  ],
+  
+  "projectsDB": [
+    {
+      "project_id": "BP-001",
+      "name": "Four-Wheel Vehicle with Headlights",
+      "description": "A classic starter project. The Microcontroller acts as the brain, telling the Motor Driver Blox how to power the four Motor Blox for movement. Two LED Blox serve as headlights, which you can program to turn on and off with the motors, making it a functional little car.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-003", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 4},
+        {"module_id": "BBM-002", "quantity": 2}
+      ]
+    },
+    {
+      "project_id": "BP-002",
+      "name": "Light Sensitive Alarm",
+      "description": "Explore how sensors work by building an alarm that responds to changes in light. The Light Sensor Blox detects ambient light levels. When the light drops below a certain threshold (like when a hand covers it), the Microcontroller triggers the Sound Blox to emit a buzzing alarm.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-011", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-003",
+      "name": "Smart Plant Monitor",
+      "description": "Keep your plants happy by creating a device that monitors their environment. The Moisture Sensor Blox checks if the soil is too dry, while the Temperature Sensor Blox monitors the air temperature. The Microcontroller reads this data and shows status updates and alerts on the Display Blox, and can trigger the Sound Blox if the plant needs water.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-013", "quantity": 1},
+        {"module_id": "BBM-012", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-004",
+      "name": "Voice-Controlled Robot",
+      "description": "Step into the future by building a robot that listens to your commands. The Voice Command Blox processes spoken words like 'forward' or 'stop'. The Microcontroller interprets these commands and directs the Motor Driver and Motor Blox to move the robot accordingly. You can even program it to make sounds with the Sound Blox in response.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-005", "quantity": 1},
+        {"module_id": "BBM-003", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 2},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-005",
+      "name": "Automatic Door Opener",
+      "description": "Build a hands-free door opener, perfect for a model house. The Distance Sensor Blox detects when an object (like a person or a toy car) is near. When triggered, the Microcontroller activates a Motor Blox to swing the door open, with an LED Blox to indicate that it's active.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-014", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-006",
+      "name": "Mini Weather Station",
+      "description": "Become a meteorologist by building a device that tracks local weather conditions. It uses a Temperature Sensor, Humidity Sensor, and Light Sensor to collect environmental data. All the information is then neatly presented on the Display Blox, giving you a real-time dashboard.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-012", "quantity": 1},
+        {"module_id": "BBM-018", "quantity": 1},
+        {"module_id": "BBM-011", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-007",
+      "name": "Color Sorting Machine",
+      "description": "A challenging but rewarding project in automation. The Color Sensor Blox identifies the color of an object placed in the machine. Based on the color, the Microcontroller activates a series of Motor Blox to guide the object into the correct bin. The Display Blox can show the color being detected.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-016", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 3},
+        {"module_id": "BBM-003", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-008",
+      "name": "Gesture-Controlled Room Light",
+      "description": "Control your lights with a wave of your hand. The Motion Sensor Blox (PIR) detects movement. You can program it so that a specific gesture or series of movements triggers the Microcontroller to turn a bank of LED Blox on or off, and maybe play a sound with the Sound Blox.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-015", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 4},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-009",
+      "name": "IoT Smart Security System",
+      "description": "Build a comprehensive security system that can notify you remotely. A Motion Sensor and a Distance Sensor work together to detect intruders. When triggered, the Sound Blox creates an alarm, LEDs flash, and the Connectivity Blox sends an alert to a smartphone or computer.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-015", "quantity": 1},
+        {"module_id": "BBM-014", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 2},
+        {"module_id": "BBM-010", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-010",
+      "name": "Interactive Music Box",
+      "description": "Create your own digital instrument. Use multiple Button/Switch Blox as keys to play different notes through the Sound Blox. You can add an Accelerometer Blox to change the octave or add effects by tilting the box, making it truly interactive.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-007", "quantity": 4},
+        {"module_id": "BBM-009", "quantity": 1},
+        {"module_id": "BBM-017", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-011",
+      "name": "Digital Spirit Level",
+      "description": "Build a high-tech version of a carpenter's level. The Accelerometer Blox measures tilt and orientation on two axes. The Microcontroller processes this data and displays a visual representation on the Display Blox, showing you exactly how level a surface is.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-017", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-012",
+      "name": "Pressure-Plate Puzzle Box",
+      "description": "Create a mystery box that only opens when the right amount of force is applied. The Force/Pressure Sensor Blox acts as the lock's trigger. When the correct pressure is detected by the Microcontroller, it commands a Motor Blox to unlock a latch. An LED can be used to provide feedback.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-019", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-013",
+      "name": "Infrared Remote Relay",
+      "description": "Control any device in your house that uses a simple IR remote. The IR Blox receives signals from a standard remote control. The Microcontroller can then be programmed to toggle an LED, a Motor, or a Sound Blox based on which button was pressed, effectively making your own universal remote receiver.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-004", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-014",
+      "name": "Automated Pet Feeder",
+      "description": "Ensure your pet is always fed on time with this smart feeder. A Motor Blox is used to dispense food. The Microcontroller can be programmed for specific feeding times. A Distance Sensor can check if the food bowl is empty, and a Sound Blox can play a sound to call your pet.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 1},
+        {"module_id": "BBM-014", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1},
+        {"module_id": "BBM-006", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-015",
+      "name": "Bluetooth-Controlled Car",
+      "description": "Upgrade the basic vehicle project with wireless control. The Connectivity Blox (in Bluetooth mode) pairs with a smartphone app. You can then send commands from your phone to the Microcontroller, which in turn operates the Motor Driver and Motor Blox to drive the car.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-010", "quantity": 1},
+        {"module_id": "BBM-003", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 2},
+        {"module_id": "BBM-006", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-016",
+      "name": "Lie Detector (Polygraph)",
+      "description": "A fun project to see how physiology can be measured. A Humidity Sensor can detect changes in skin moisture (sweat), and a Force Sensor can measure pulse when pressed lightly. The Microcontroller displays the fluctuating values on the screen. (Disclaimer: For entertainment purposes only!)",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-018", "quantity": 1},
+        {"module_id": "BBM-019", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-017",
+      "name": "Automated Greenhouse Controller",
+      "description": "Create a fully automated environment for plants. This system uses a Moisture Sensor for watering, a Temperature and Humidity Sensor to control a fan (Motor Blox), and a Light Sensor to control grow lights (LED Blox). The Connectivity Blox can log all data for analysis.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-013", "quantity": 1},
+        {"module_id": "BBM-012", "quantity": 1},
+        {"module_id": "BBM-018", "quantity": 1},
+        {"module_id": "BBM-011", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 4},
+        {"module_id": "BBM-020", "quantity": 1},
+        {"module_id": "BBM-010", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-018",
+      "name": "Simon Says Memory Game",
+      "description": "Build the classic electronic memory game. The system uses four colored LED Blox and four matching Button/Switch Blox. The Microcontroller generates a sequence of lights and sounds (with the Sound Blox), and the player must repeat it by pressing the buttons in the correct order. The Display Blox can show the score.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 4},
+        {"module_id": "BBM-007", "quantity": 4},
+        {"module_id": "BBM-009", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-019",
+      "name": "Room Occupancy Counter",
+      "description": "A useful device for a clubhouse or classroom. It uses two IR Blox or Distance Sensor Blox placed at a doorway. By detecting the sequence in which the sensors are triggered, the Microcontroller can determine if someone is entering or leaving, and keep a running tally on the Display Blox.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-004", "quantity": 2},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-020",
+      "name": "Color-Matching LED Lamp",
+      "description": "Build a lamp that can mimic the color of any object. The Color Sensor Blox reads the color of an object held up to it. The Microcontroller then adjusts the RGB values of an LED Blox (or multiple LEDs) to reproduce that exact color, creating a magical ambient light.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-016", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-021",
+      "name": "Morse Code Communicator",
+      "description": "Learn morse code by building a transmitter and receiver. A Button/Switch Blox is used to tap out messages in morse code. The Microcontroller translates these taps into flashes from an LED Blox and beeps from a Sound Blox, allowing you to send messages the old-fashioned way.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-007", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-022",
+      "name": "Clap-On, Clap-Off Light",
+      "description": "A fun introduction to sound sensing. The Voice Command Blox (or a simple microphone) listens for sharp sounds like a clap. The Microcontroller is programmed to toggle an LED Blox on or off every time it detects two claps in quick succession.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-005", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-023",
+      "name": "Digital Hourglass",
+      "description": "Create a timer that uses LEDs to simulate falling sand. An Accelerometer Blox detects when you flip the device over. The Microcontroller then starts a countdown, turning on a column of LED Blox one by one. When it's done, the Sound Blox can chime.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-017", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 8},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-024",
+      "name": "Line-Following Robot",
+      "description": "A classic robotics challenge. This robot uses one or two IR Blox pointing at the ground to detect a black line on a white surface. The Microcontroller uses the sensor feedback to steer the motors, keeping the robot perfectly on track along the line.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-004", "quantity": 2},
+        {"module_id": "BBM-020", "quantity": 2},
+        {"module_id": "BBM-003", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-025",
+      "name": "Reaction Time Game",
+      "description": "Test your reflexes with this fast-paced game. The game flashes an LED Blox at a random time, and the player must hit a Button/Switch Blox as quickly as possible. The Microcontroller measures the time between the light and the press, and shows your score in milliseconds on the Display Blox.",
+      "difficulty": "Beginner",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-002", "quantity": 1},
+        {"module_id": "BBM-007", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-026",
+      "name": "Self-Parking Car",
+      "description": "An advanced robotics project that mimics a real-world feature. The car uses multiple Distance Sensor Blox to measure its surroundings. The Microcontroller runs a complex algorithm to analyze this data and control the motors to execute a perfect parallel park maneuver.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-014", "quantity": 3},
+        {"module_id": "BBM-020", "quantity": 2},
+        {"module_id": "BBM-003", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-027",
+      "name": "Tilt-Controlled Maze Game",
+      "description": "Create a physical game where you tilt the controller to guide a character on a screen. The Accelerometer Blox detects the tilt of your controller. This data is sent to the Microcontroller, which updates the position of a 'player' on the Display Blox, allowing you to navigate a maze.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-017", "quantity": 1},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-028",
+      "name": "Smart Doorbell with Camera",
+      "description": "Build a doorbell that can send a notification to your phone. A Button/Switch Blox acts as the doorbell. When pressed, the Microcontroller uses the Connectivity Blox to send an alert. A simple camera module (if available, otherwise simulate with an LED) can 'take a picture'.",
+      "difficulty": "Advanced",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-007", "quantity": 1},
+        {"module_id": "BBM-010", "quantity": 1},
+        {"module_id": "BBM-009", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-029",
+      "name": "Automated Blind/Curtain Opener",
+      "description": "Wake up with the sun by building a device that automatically opens your blinds. A Light Sensor Blox detects the morning light. The Microcontroller then activates a Motor Blox, which is attached to the blind's cord, to slowly open them. A Button allows for manual control.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-011", "quantity": 1},
+        {"module_id": "BBM-020", "quantity": 1},
+        {"module_id": "BBM-007", "quantity": 1}
+      ]
+    },
+    {
+      "project_id": "BP-030",
+      "name": "Soil Moisture Gradient Sensor",
+      "description": "An interesting scientific tool. By placing multiple Moisture Sensor Blox at different depths in a planter, you can use the Microcontroller and Display Blox to visualize how water travels through soil over time, showing the moisture level at each depth.",
+      "difficulty": "Intermediate",
+      "required_modules": [
+        {"module_id": "BBM-001", "quantity": 1},
+        {"module_id": "BBM-013", "quantity": 3},
+        {"module_id": "BBM-008", "quantity": 1}
+      ]
+    }
+  ]
+} 
