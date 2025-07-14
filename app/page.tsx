@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center justify-center">
-      {/* Background Glows */}
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vh] bg-[#00ce93] opacity-10 blur-3xl rounded-full animate-pulse-slow"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/4 w-[40vw] h-[40vh] bg-blue-500 opacity-10 blur-3xl rounded-full animate-pulse-slow animation-delay-2000"></div>
 
