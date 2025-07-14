@@ -55,7 +55,7 @@ export default function SuggesterPage() {
         });
         setData(data)
         
-        // Initialize manual quantities with TRU as 1
+
         const initialQuantities = data.modulesDB.reduce((acc, module) => {
           acc[module.id] = module.id === 'BBM-001' ? 1 : 0
           return acc
@@ -100,7 +100,7 @@ export default function SuggesterPage() {
                     const moduleId = aliasToModuleMap[nextWord]
                     if (moduleId) {
                         userInventory[moduleId] = (userInventory[moduleId] || 0) + quantity
-                        i++; // Skip next word
+                        i++; 
                     }
                 }
             } else {
@@ -134,7 +134,7 @@ export default function SuggesterPage() {
 
             if (missingCount === 0) {
                 recommended.perfect.push(project)
-            } else if (missingCount <= 2) { // Criteria for a "near match"
+            } else if (missingCount <= 2) { // Criteria for a near match
                 recommended.near.push({ ...project, missing_modules: missingModules })
             }
         });
@@ -157,7 +157,7 @@ export default function SuggesterPage() {
   const isSuggestDisabled = () => {
     if (loading || analyzing) return true
     if (inputType === 'text') return !textInput.trim()
-    // For manual, ensure at least one module besides TRU is selected
+    
     return Object.entries(manualQuantities).every(([id, qty]) => id === 'BBM-001' || qty === 0)
   }
 
@@ -310,7 +310,7 @@ export default function SuggesterPage() {
   )
 }
 
-// --- SUB COMPONENT for Project Cards ---
+
 function ProjectCard({ project, modules }: { project: Project; modules: Module[] }) {
   const getDifficultyBadge = (difficulty: string) => {
     switch (difficulty) {
