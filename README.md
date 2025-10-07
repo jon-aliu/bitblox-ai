@@ -1,5 +1,6 @@
 # BitBlox AI Project Suggester
 
+
 A Next.js web application that helps students discover projects they can build with their BitBlox electronic modules. The application uses AI-powered natural language processing to match user's module inventory with available projects.
 
 ## Features
